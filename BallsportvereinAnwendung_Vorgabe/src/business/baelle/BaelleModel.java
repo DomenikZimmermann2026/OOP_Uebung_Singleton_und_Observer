@@ -3,10 +3,27 @@ package business.baelle;
 import java.io.*;
 
 public class BaelleModel {
- 		
+ 	
+	//Singleton
+	private static BaelleModel theInstance = null;
+	
 	private Ball[] baelle = new Ball[100];
 	private int anzahlBaelle;
 	
+	//Konstruktor
+	private BaelleModel() {	}
+	
+	//Singleton Methode
+	public static BaelleModel getInstance() {
+		if (theInstance == null) {
+			theInstance = new BaelleModel();
+		}
+		return theInstance;
+	}
+	
+	
+	
+	//Methoden
 	private int getAnzahlBaelle() {
 		return anzahlBaelle;
 	}

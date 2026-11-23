@@ -9,7 +9,7 @@ public class BaelleControl {
 	private BaelleModel baelleModel;
 
 	public BaelleControl(Stage primaryStage){
-		this.baelleModel = new BaelleModel();
+		this.baelleModel = BaelleModel.getInstance();
 		this.baelleView = new BaelleView(this, primaryStage, 
 			baelleModel);
 	}
