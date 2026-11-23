@@ -9,8 +9,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import ownUtil.MeldungsfensterAnzeiger;
+import ownUtil.Observer;
 
-public class BaelleView {
+public class BaelleView implements Observer {
 	  
 	private BaelleModel baelleModel;
 	private BaelleControl baelleControl;
@@ -154,6 +155,12 @@ public class BaelleView {
    void zeigeFehlermeldungsfensterAn(String fehlertyp, String meldung){
 	   new MeldungsfensterAnzeiger(AlertType.ERROR,
 			fehlertyp + " Fehler", meldung).zeigeMeldungsfensterAn();
+   }
+
+   @Override
+   public void update() {
+	   
+	
    }
 
 }
